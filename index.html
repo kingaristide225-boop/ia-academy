@@ -100,6 +100,16 @@ html.s-js .s-rv[style*="grid"].in>*{opacity:1;transform:none}
 .s-door{background:#000!important}
 .brand-name{white-space:nowrap}
 @media (max-width:480px){.brand-name{font-size:17px!important}.s-cta-tap{font-size:13px!important;padding:10px 16px!important}}
+.pay-wrap{position:relative;margin:24px 0 52px}
+.pay-btn{position:relative;display:flex;align-items:center;justify-content:center;min-height:76px;border-radius:18px;background:#00F5D4;color:#07070A;text-decoration:none;font-family:Anton,sans-serif;font-size:30px;letter-spacing:.03em;overflow:hidden;animation:payBlink 1.2s ease-in-out infinite,payPress 2.4s ease-in-out infinite}
+.pay-btn:hover{color:#07070A}
+.pay-ripple{position:absolute;left:50%;top:62%;width:24px;height:24px;margin:-12px 0 0 -12px;border-radius:50%;background:rgba(255,255,255,.75);opacity:0;animation:payRipple 2.4s ease-out infinite}
+.pay-finger{position:absolute;left:50%;top:100%;font-size:46px;line-height:1;margin-left:-6px;pointer-events:none;filter:drop-shadow(0 6px 10px rgba(0,0,0,.6));animation:payTap 2.4s ease-in-out infinite}
+@keyframes payBlink{0%,100%{box-shadow:0 0 0 0 rgba(0,245,212,.7),0 10px 30px rgba(0,245,212,.25)}50%{box-shadow:0 0 0 12px rgba(0,245,212,0),0 10px 40px rgba(0,245,212,.55)}}
+@keyframes payPress{0%,42%,58%,100%{transform:scale(1)}50%{transform:scale(.95)}}
+@keyframes payTap{0%,100%{transform:translate(10px,26px) rotate(-12deg)}40%{transform:translate(0,-34px) rotate(-12deg)}50%{transform:translate(0,-28px) scale(.92) rotate(-12deg)}62%{transform:translate(0,-34px) rotate(-12deg)}}
+@keyframes payRipple{0%,48%{opacity:0;transform:scale(.3)}52%{opacity:.9;transform:scale(1)}85%,100%{opacity:0;transform:scale(5)}}
+@media (prefers-reduced-motion: reduce){.pay-btn,.pay-ripple,.pay-finger{animation:none}}
 </style>
 <!-- TOUS LES LIENS ET LES PRIX SONT DANS config/config.js -->
 <script src="config/config.js"></script>
@@ -473,40 +483,28 @@ html.s-js .s-rv[style*="grid"].in>*{opacity:1;transform:none}
 </section>
 
 <!-- ================= 7. OFFRE ================= -->
-<section id="offre" style="max-width: 1240px; margin: 0 auto; padding: 60px 20px 40px">
+<section id="offre" style="max-width: 1240px; margin: 0 auto; padding: 60px 20px 40px; scroll-margin-top: 70px">
 <h2 class="s-rv" style="margin: 0; text-align: center; font-size: clamp(28px, 3.4vw, 40px); font-weight: 800">Rejoins la formation</h2>
-<div class="s-rv" style="max-width: 520px; margin: 26px auto 0; padding: 28px; border-radius: 24px; background: #0E0E13; border: 1.5px solid rgba(0,245,212,0.5)">
+<div class="s-rv" style="max-width: 480px; margin: 22px auto 0; padding: 28px 24px 26px; border-radius: 24px; background: #0E0E13; border: 1.5px solid rgba(0,245,212,0.5); text-align: center">
 <span style="font-size: 12px; font-weight: 800; color: #07070A; background: #00F5D4; padding: 6px 12px; border-radius: 999px">Offre de lancement</span>
-<h3 style="margin: 16px 0 0; font-size: 22px; font-weight: 800">Formation complète Google Flow</h3>
-<div style="display: flex; align-items: baseline; gap: 12px; margin-top: 10px; flex-wrap: wrap">
-<span style="font-family: Anton, sans-serif; font-size: 60px; line-height: 1"><span data-cfg="prix">2 500 F</span></span>
-<span style="font-size: 18px; color: #7A7A74; text-decoration: line-through"><span data-cfg="prixBarre">4 000 F</span></span>
+<div style="display: flex; align-items: baseline; justify-content: center; gap: 12px; margin-top: 16px; flex-wrap: wrap">
+<span style="font-family: Anton, sans-serif; font-size: 68px; line-height: 1"><span data-cfg="prix">2 500 F</span></span>
+<span style="font-size: 20px; color: #7A7A74; text-decoration: line-through"><span data-cfg="prixBarre">4 000 F</span></span>
 </div>
-<p style="margin: 12px 0 0; display: flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 700; color: #00F5D4"><span class="s-dot" style="width: 8px; height: 8px; border-radius: 50%; background: #00F5D4; flex: none"></span>Prix de lancement réservé aux <span data-cfg="placesPromo">50</span> premiers inscrits, ensuite <span data-cfg="prixBarre">4 000 F</span></p>
-<div style="display: flex; flex-direction: column; gap: 12px; margin-top: 22px">
-
-<div style="display: flex; gap: 10px; align-items: flex-start; font-size: 15px; line-height: 1.5; color: #D8D8D2"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#00F5D4" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none; margin-top: 1px"><path d="M20 6 9 17l-5-5"></path></svg><span>La formation complète : ChatGPT, Google Flow et CapCut</span></div>
-
-<div style="display: flex; gap: 10px; align-items: flex-start; font-size: 15px; line-height: 1.5; color: #D8D8D2"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#00F5D4" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none; margin-top: 1px"><path d="M20 6 9 17l-5-5"></path></svg><span>Bonus : 30 histoires de fruits virales pour TikTok</span></div>
-
-<div style="display: flex; gap: 10px; align-items: flex-start; font-size: 15px; line-height: 1.5; color: #D8D8D2"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#00F5D4" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none; margin-top: 1px"><path d="M20 6 9 17l-5-5"></path></svg><span>4 parties vidéo + 2 vidéos bonus, à ton rythme</span></div>
-
-<div style="display: flex; gap: 10px; align-items: flex-start; font-size: 15px; line-height: 1.5; color: #D8D8D2"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#00F5D4" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none; margin-top: 1px"><path d="M20 6 9 17l-5-5"></path></svg><span>Accès au groupe privé : le formateur répond à tes questions</span></div>
-
-<div style="display: flex; gap: 10px; align-items: flex-start; font-size: 15px; line-height: 1.5; color: #D8D8D2"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#00F5D4" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none; margin-top: 1px"><path d="M20 6 9 17l-5-5"></path></svg><span>Les mises à jour de la formation</span></div>
-
-<div style="display: flex; gap: 10px; align-items: flex-start; font-size: 15px; line-height: 1.5; color: #D8D8D2"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#00F5D4" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none; margin-top: 1px"><path d="M20 6 9 17l-5-5"></path></svg><span>Paiement unique, accès immédiat</span></div>
-
+<p style="margin: 12px 0 0; font-size: 15px; line-height: 1.5; color: #D8D8D2">Formation complète + bonus + groupe privé · Accès à vie</p>
+<p style="margin: 8px 0 0; display: flex; align-items: center; justify-content: center; gap: 8px; font-size: 13px; font-weight: 700; color: #00F5D4"><span class="s-dot" style="width: 8px; height: 8px; border-radius: 50%; background: #00F5D4; flex: none"></span>Réservé aux <span data-cfg="placesPromo">50</span> premiers inscrits</p>
+<div class="pay-wrap">
+<a href="#offre" data-link="paiement" class="pay-btn">PAYER MAINTENANT<span class="pay-ripple" aria-hidden="true"></span></a>
+<span class="pay-finger" aria-hidden="true">👆</span>
 </div>
-<a href="#offre" data-link="paiement" target="_blank" rel="noopener" class="s-btn" style="margin-top: 24px; display: flex; align-items: center; justify-content: center; min-height: 54px; border-radius: 14px; background: #00F5D4; color: #07070A; text-decoration: none; font-weight: 800; font-size: 16px">Payer maintenant</a>
-<p style="margin: 18px 0 10px; text-align: center; font-size: 13px; color: #7A7A74">Paiement sécurisé par Chariow</p>
-<div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 8px">
-<span style="height: 40px; padding: 4px 8px; border-radius: 10px; background: #FFFFFF; display: flex; align-items: center"><img src="assets/pay-orange.png" alt="Orange Money" style="height: 30px"></span>
-<span style="height: 40px; padding: 4px; border-radius: 10px; background: #FFFFFF; display: flex; align-items: center"><img src="assets/pay-mtn.jpg" alt="MTN Mobile Money" style="height: 32px; border-radius: 6px"></span>
-<span style="height: 40px; padding: 4px; border-radius: 10px; background: #FFFFFF; display: flex; align-items: center"><img src="assets/pay-wave.jpg" alt="Wave" style="height: 32px; border-radius: 6px"></span>
-<span style="height: 40px; padding: 4px 8px; border-radius: 10px; background: #FFFFFF; display: flex; align-items: center"><img src="assets/pay-moov.png" alt="Moov Money" style="height: 30px"></span>
-<span style="height: 40px; padding: 4px 8px; border-radius: 10px; background: #FFFFFF; display: flex; align-items: center"><img src="assets/pay-carte.png" alt="Carte bancaire" style="height: 28px"></span>
+<div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 6px; margin-top: 8px">
+<span style="height: 34px; padding: 3px 6px; border-radius: 8px; background: #FFFFFF; display: flex; align-items: center"><img src="assets/pay-orange.png" alt="Orange Money" style="height: 26px"></span>
+<span style="height: 34px; padding: 3px; border-radius: 8px; background: #FFFFFF; display: flex; align-items: center"><img src="assets/pay-mtn.jpg" alt="MTN Mobile Money" style="height: 28px; border-radius: 5px"></span>
+<span style="height: 34px; padding: 3px; border-radius: 8px; background: #FFFFFF; display: flex; align-items: center"><img src="assets/pay-wave.jpg" alt="Wave" style="height: 28px; border-radius: 5px"></span>
+<span style="height: 34px; padding: 3px 6px; border-radius: 8px; background: #FFFFFF; display: flex; align-items: center"><img src="assets/pay-moov.png" alt="Moov Money" style="height: 26px"></span>
+<span style="height: 34px; padding: 3px 6px; border-radius: 8px; background: #FFFFFF; display: flex; align-items: center"><img src="assets/pay-carte.png" alt="Carte bancaire" style="height: 24px"></span>
 </div>
+<p style="margin: 10px 0 0; font-size: 12px; color: #7A7A74">Paiement sécurisé par Chariow · Accès immédiat</p>
 </div>
 </section>
 
