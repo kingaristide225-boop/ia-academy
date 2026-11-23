@@ -31,7 +31,7 @@ window.SITE_CONFIG = {
   // Vidéo « comment payer ». Vide = la section est cachée.
   youtubeCommentPayer: "https://youtube.com/shorts/jJhKxUR5iMw",
   // Image de couverture de la vidéo « comment payer »
-  couvertureVideoPaiement: "assets/couverture-paiement.jpg",
+  couvertureVideoPaiement: "assets/couverture-paiement-2.jpg",
 
   // ----- CONTACTS -----
   whatsapp1: "2250501436408",
