@@ -29,7 +29,9 @@ window.SITE_CONFIG = {
   // Format des vidéos YouTube : "vertical" (TikTok / Short) ou "horizontal"
   formatVideo: "vertical",
   // Vidéo « comment payer ». Vide = la section est cachée.
-  youtubeCommentPayer: "",
+  youtubeCommentPayer: "https://youtube.com/shorts/jJhKxUR5iMw",
+  // Image de couverture de la vidéo « comment payer »
+  couvertureVideoPaiement: "assets/couverture-paiement.jpg",
 
   // ----- CONTACTS -----
   whatsapp1: "2250501436408",

@@ -61,7 +61,7 @@
       if (sec) sec.hidden = false;
     }
     box.innerHTML = '<button type="button" class="yt-play" aria-label="Lire la vidéo">' +
-      '<img src="' + ((key === "youtubeOpportunite" && C.couvertureVideo) ? C.couvertureVideo : 'https://i.ytimg.com/vi/' + id + (vertical ? '/oardefault.jpg' : '/hqdefault.jpg')) + '" alt="Regarder la vidéo" loading="lazy">' + '<em class="yt-hint">Clique pour regarder la vidéo</em>' +
+      '<img src="' + (({ youtubeOpportunite: C.couvertureVideo, youtubeCommentPayer: C.couvertureVideoPaiement })[key] || 'https://i.ytimg.com/vi/' + id + (vertical ? '/oardefault.jpg' : '/hqdefault.jpg')) + '" alt="Regarder la vidéo" loading="lazy">' + '<em class="yt-hint">Clique pour regarder la vidéo</em>' +
       '<span><svg width="28" height="28" viewBox="0 0 24 24" fill="#07070A" aria-hidden="true"><path d="M7 4v16l13-8z"/></svg></span></button>';
     box.querySelector(".yt-play").addEventListener("click", function () {
       box.innerHTML = '<iframe src="https://www.youtube-nocookie.com/embed/' + id +
