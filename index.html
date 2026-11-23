@@ -1,0 +1,638 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Formation Google Flow – Académie Digitale</title>
+<meta name="description" content="Apprends à créer des vidéos IA virales avec ChatGPT, Google Flow et CapCut, et transforme cette compétence en revenus.">
+<meta property="og:title" content="Formation Google Flow – Académie Digitale">
+<meta property="og:description" content="Crée des vidéos IA virales et gagne de l'argent. Accompagnement dans un groupe privé.">
+<meta property="og:image" content="assets/fond-google-flow.jpg">
+<meta name="theme-color" content="#07070A">
+<link rel="icon" href="assets/flow-logo.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Space+Mono:wght@400;700&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#07070A}
+a{color:#00F5D4}a:hover{color:#7FFFEA}
+*{box-sizing:border-box}
+@keyframes sBreath{0%,100%{transform:scale(1)}50%{transform:scale(1.035)}}
+@keyframes sGlow{0%,100%{opacity:.2;transform:scale(.9)}50%{opacity:.45;transform:scale(1.05)}}
+@keyframes sBar{from{width:0%}to{width:100%}}
+@keyframes sBlink{0%,100%{opacity:1}50%{opacity:0}}
+@keyframes sUp{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}
+@keyframes sFill{from{-webkit-text-fill-color:transparent}to{-webkit-text-fill-color:#F2F2EE}}
+@keyframes sRowL{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@keyframes sRowR{from{transform:translateX(-50%)}to{transform:translateX(0)}}
+@keyframes sScan{0%{top:-20%}100%{top:120%}}
+.s-emblem{animation:sBreath 3s ease-in-out infinite}
+.s-glow{position:absolute;inset:8%;border-radius:50%;background:radial-gradient(circle,rgba(0,245,212,.45),rgba(0,245,212,0) 65%);filter:blur(30px);animation:sGlow 3s ease-in-out infinite}
+.s-mark{position:relative;display:block;width:100%;height:100%;object-fit:contain;mix-blend-mode:screen}
+.s-door{position:absolute;top:0;height:100vh;min-height:640px;width:50%;overflow:hidden;background:#07070A;transition:transform .6s cubic-bezier(.77,0,.18,1);z-index:100}
+.s-door-l{left:0}.s-door-r{right:0}
+.s-door-l.is-open{transform:translateX(-102%)}.s-door-r.is-open{transform:translateX(102%)}
+.s-door-in{position:absolute;top:0;height:min(100vh,960px);width:200%}
+.s-door-l .s-door-in{left:0}.s-door-r .s-door-in{right:0}
+.s-hud{transition:opacity .35s ease}.s-hud.is-open{opacity:0;pointer-events:none}
+.s-bar{animation:sBar .25s cubic-bezier(.6,0,.2,1) forwards}
+.s-caret{display:inline-block;width:2px;height:1em;background:#00F5D4;margin-left:3px;vertical-align:-2px;animation:sBlink 1s steps(1) infinite}
+.s-outline{-webkit-text-stroke:2px #F2F2EE;-webkit-text-fill-color:transparent}
+.s-on .s-l.s-outline{animation-name:sLetter,sWave,sFill;animation-duration:.75s,6s,.8s;animation-timing-function:cubic-bezier(.2,.8,.2,1),ease-in-out,ease-out;animation-iteration-count:1,infinite,1;animation-fill-mode:both,none,forwards}
+.s-on .s-h1{animation:sUp .8s cubic-bezier(.2,.7,.2,1) .35s both}
+.s-on .s-h2{animation:sUp .8s cubic-bezier(.2,.7,.2,1) .5s both}
+.s-on .s-h3{animation:sUp .9s cubic-bezier(.2,.7,.2,1) 1.7s both}
+.s-on .s-h4{animation:sUp .9s cubic-bezier(.2,.7,.2,1) 1.95s both}
+.s-row-l{display:flex;gap:14px;width:max-content;animation:sRowL 40s linear infinite}
+.s-row-r{display:flex;gap:14px;width:max-content;animation:sRowR 40s linear infinite}
+.s-scan{position:absolute;left:0;right:0;height:22%;background:linear-gradient(180deg,rgba(0,245,212,0),rgba(0,245,212,.12),rgba(0,245,212,0));animation:sScan 3.2s linear infinite}
+.s-btn{transition:transform .2s ease,background-color .2s ease}
+.s-btn:hover{transform:translateY(-2px)}
+.s-card{transition:border-color .25s ease}
+.s-card:hover{border-color:rgba(0,245,212,.35)}
+html.s-js .s-rv{opacity:0;transform:translateY(30px);filter:blur(1.5px);transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1),filter .9s ease}
+html.s-js .s-rv.in{opacity:1;transform:none;filter:none}
+html.s-js .s-rv[style*="grid"]>*{opacity:0;transform:translateY(26px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1)}
+html.s-js .s-rv[style*="grid"].in>*{opacity:1;transform:none}
+.s-rv[style*="grid"]>*:nth-child(2){transition-delay:.1s}.s-rv[style*="grid"]>*:nth-child(3){transition-delay:.2s}.s-rv[style*="grid"]>*:nth-child(4){transition-delay:.3s}.s-rv[style*="grid"]>*:nth-child(5){transition-delay:.4s}.s-rv[style*="grid"]>*:nth-child(6){transition-delay:.5s}
+.s-l,.s-t{display:inline-block;white-space:pre}
+.s-band{display:flex;gap:40px;width:max-content;align-items:center;animation:sRowL 24s linear infinite}
+.s-l{opacity:0}
+.s-t{opacity:0}
+.s-on .s-l{animation:sLetter .75s cubic-bezier(.2,.8,.2,1) both,sWave 6s ease-in-out infinite}
+.s-on .s-t{animation:sType .01s linear both}
+@keyframes sLetter{0%{opacity:0;transform:translateY(70%) rotate(10deg) scale(.9);filter:blur(3px)}100%{opacity:1;transform:none;filter:none}}
+@keyframes sWave{0%,88%,100%{translate:0 0}94%{translate:0 -6px}}
+@keyframes sType{to{opacity:1}}
+@media (prefers-reduced-motion: reduce){.s-l,.s-t{opacity:1!important;animation:none!important}.s-js .s-rv,.s-js .s-rv[style*="grid"]>*{opacity:1!important;transform:none!important;filter:none!important}.s-emblem,.s-glow,.s-caret,.s-band,.s-row-l,.s-row-r,.s-scan,.s-rv{animation:none}.s-door{transition:none}.s-outline{-webkit-text-fill-color:#F2F2EE}}
+.s-cta-tap{animation:sPress 2s ease-in-out infinite}
+.s-hand{position:absolute;right:-8px;bottom:-22px;transform-origin:30% 10%;animation:sTap 2s ease-in-out infinite;filter:drop-shadow(0 3px 6px rgba(0,0,0,.5))}
+.s-ripple{position:absolute;right:10px;bottom:4px;width:14px;height:14px;border-radius:50%;border:2px solid #FFFFFF;opacity:0;animation:sRipple 2s ease-out infinite}
+@keyframes sTap{0%,100%{transform:translate(10px,10px) rotate(-10deg)}40%{transform:translate(0,0) rotate(-10deg)}50%{transform:translate(0,0) scale(.88) rotate(-10deg)}60%{transform:translate(0,0) rotate(-10deg)}}
+@keyframes sPress{0%,45%,60%,100%{transform:scale(1)}50%{transform:scale(.95)}}
+@keyframes sRipple{0%,48%{opacity:0;transform:scale(.4)}52%{opacity:.9;transform:scale(1)}80%,100%{opacity:0;transform:scale(2.6)}}
+.s-wa{animation:sFloat 3s ease-in-out infinite}
+.s-wa::after{content:"";position:absolute;inset:0;border-radius:50%;border:2px solid #25D366;animation:sRing 2.4s ease-out infinite}
+@keyframes sFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+@keyframes sRing{0%{transform:scale(1);opacity:.8}100%{transform:scale(1.6);opacity:0}}
+@media (prefers-reduced-motion: reduce){.s-cta-tap,.s-hand,.s-ripple,.s-wa,.s-wa::after{animation:none}}
+.s-tool{padding:14px 14px 22px;border-radius:20px;background:#0E0E13;border:1px solid rgba(255,255,255,0.08);transition:border-color .3s ease,transform .3s ease,box-shadow .3s ease}
+.s-tool:hover{border-color:rgba(0,245,212,.5);transform:translateY(-4px);box-shadow:0 18px 40px rgba(0,245,212,.12)}
+.s-tool-vis{position:relative;height:150px;border-radius:14px;overflow:hidden;background:radial-gradient(circle at 50% 40%,#17171E,#0A0A0E);border:1px solid rgba(255,255,255,0.06);display:flex;align-items:center;justify-content:center}
+.s-tool-n{position:absolute;left:10px;top:10px;font-family:'Space Mono',monospace;font-size:12px;font-weight:700;color:#07070A;background:#00F5D4;padding:3px 8px;border-radius:6px}
+.s-tool-logo{animation:sToolFloat 4s ease-in-out infinite;filter:drop-shadow(0 8px 20px rgba(0,245,212,.25))}
+@keyframes sToolFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+.s-flowline{position:absolute;left:4%;right:4%;top:89px;height:2px;background:rgba(0,245,212,.18);overflow:hidden;z-index:0}
+.s-flowline::after{content:"";position:absolute;top:0;left:-20%;width:20%;height:100%;background:linear-gradient(90deg,rgba(0,245,212,0),#00F5D4,rgba(0,245,212,0));animation:sFlowRun 2.8s linear infinite}
+@keyframes sFlowRun{to{left:100%}}
+@media (max-width: 1020px){.s-flowline{display:none}}
+@media (prefers-reduced-motion: reduce){.s-tool-logo,.s-flowline::after{animation:none}}
+.s-dot{animation:sDot 1.6s ease-in-out infinite}
+@keyframes sDot{0%,100%{opacity:1}50%{opacity:.25}}
+
+.yt-play{position:absolute;inset:0;border:0;padding:0;cursor:pointer;background:#000}
+.yt-play img{width:100%;height:100%;object-fit:cover;opacity:1}
+.yt-play:hover span{transform:scale(1.08)}
+.yt-play span{transition:transform .2s ease;animation:ytPulse 2s ease-out infinite}
+@keyframes ytPulse{0%{box-shadow:0 0 0 0 rgba(0,245,212,.6)}70%{box-shadow:0 0 0 22px rgba(0,245,212,0)}100%{box-shadow:0 0 0 0 rgba(0,245,212,0)}}
+.yt-hint{position:absolute;left:50%;top:16px;transform:translateX(-50%);white-space:nowrap;font-style:normal;font-family:"Space Mono",monospace;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#07070A;background:#00F5D4;padding:7px 12px;border-radius:999px}
+.yt-play span{position:absolute;left:50%;top:50%;width:78px;height:78px;margin:-39px 0 0 -39px;border-radius:50%;background:#00F5D4;display:flex;align-items:center;justify-content:center;box-shadow:0 10px 40px rgba(0,245,212,.4)}
+.yt iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.s-door{background:#000!important}
+.brand-name{white-space:nowrap}
+@media (max-width:480px){.brand-name{font-size:17px!important}.s-cta-tap{font-size:13px!important;padding:10px 16px!important}}
+</style>
+<!-- TOUS LES LIENS ET LES PRIX SONT DANS config/config.js -->
+<script src="config/config.js"></script>
+</head>
+<body>
+<div id="site" style="position: relative; width: 100%; background: #07070A; color: #F2F2EE; font-family: 'Plus Jakarta Sans', system-ui, sans-serif">
+
+<!-- ================= INTRO ================= -->
+<div id="intro">
+<div class="s-door s-door-l" aria-hidden="true"><div class="s-door-in" style="display: flex; align-items: center; justify-content: center"><div class="s-emblem" style="position: relative; width: 300px; height: 300px"><div class="s-glow"></div><img class="s-mark" src="assets/flow-logo.jpg" alt=""></div></div></div>
+<div class="s-door s-door-r" aria-hidden="true"><div class="s-door-in" style="display: flex; align-items: center; justify-content: center"><div class="s-emblem" style="position: relative; width: 300px; height: 300px"><div class="s-glow"></div><img class="s-mark" src="assets/flow-logo.jpg" alt=""></div></div></div>
+<div class="s-hud" style="position: absolute; top: 0; left: 0; right: 0; height: min(100vh, 960px); min-height: 640px; z-index: 110; display: flex; flex-direction: column; align-items: center; justify-content: space-between; padding: 32px 24px">
+<p style="margin: 0; font-family: Anton, sans-serif; font-size: 22px; letter-spacing: 0.06em">ACADÉMIE DIGITALE</p>
+<div style="height: 200px"></div>
+<div style="width: 100%; max-width: 380px; text-align: center">
+<p style="margin: 0; font-family: 'Space Mono', monospace; font-size: 12px; letter-spacing: 0.2em; color: #00F5D4">BIENVENUE À L'ACADÉMIE</p>
+<p style="margin: 10px 0 0; font-family: Anton, sans-serif; font-size: 21px; letter-spacing: 0.02em">FORMATION GOOGLE FLOW<span class="s-caret"></span></p>
+<div style="margin-top: 14px; height: 3px; border-radius: 999px; background: rgba(255,255,255,0.1); overflow: hidden"><div class="s-bar" style="height: 100%; background: #00F5D4"></div></div>
+<button type="button" id="intro-skip" style="margin-top: 22px; min-height: 44px; padding: 10px 22px; border-radius: 999px; border: 1px solid rgba(255,255,255,0.22); background: transparent; color: #F2F2EE; font-size: 12px; letter-spacing: 0.14em; font-family: 'Space Mono', monospace; cursor: pointer">PASSER</button>
+</div>
+</div>
+</div>
+
+<!-- ================= BARRE DU HAUT ================= -->
+<header style="position: sticky; top: 0; z-index: 50; background: rgba(7,7,10,0.82); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255,255,255,0.06)">
+<div style="max-width: 1240px; margin: 0 auto; padding: 12px 20px; display: flex; align-items: center; justify-content: space-between; gap: 12px">
+<div style="display: flex; align-items: center; gap: 10px">
+<div style="width: 50px; height: 26px; overflow: hidden; display: flex; align-items: center; justify-content: center"><img src="assets/flow-logo.jpg" alt="flow" style="width: 64px; height: 64px; flex: none; mix-blend-mode: screen"></div>
+<span class="brand-name" style="font-family: Anton, sans-serif; font-size: 22px; letter-spacing: 0.02em">ACADÉMIE DIGITALE</span>
+</div>
+<a href="#offre" class="s-cta-tap" style="position: relative; text-decoration: none; background: #00F5D4; color: #07070A; font-weight: 800; font-size: 14px; padding: 12px 22px; border-radius: 999px; min-height: 46px; display: inline-flex; align-items: center; gap: 8px; box-shadow: 0 0 0 1px rgba(0,245,212,0.4), 0 8px 24px rgba(0,245,212,0.25)">Rejoins la formation
+<span class="s-ripple" aria-hidden="true"></span>
+<svg class="s-hand" width="30" height="30" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 11V5.5a1.5 1.5 0 0 1 3 0V10m0-.5V4a1.5 1.5 0 0 1 3 0v6m0-1.5a1.5 1.5 0 0 1 3 0V12m0-1.5a1.5 1.5 0 0 1 3 0V15c0 3.5-2.5 6-6 6h-1.5c-2 0-3.5-.8-4.7-2.3L4.4 15.3a1.6 1.6 0 0 1 2.4-2.1L9 15V11" fill="#FFFFFF" stroke="#07070A" stroke-width="1.4" stroke-linejoin="round" stroke-linecap="round"></path></svg>
+</a>
+</div>
+</header>
+
+<!-- ================= 1. HERO (écran d'intro) ================= -->
+<section style="position: relative; overflow: hidden; min-height: min(calc(100vh - 70px), 900px); display: flex; flex-direction: column">
+<img aria-hidden="true" src="assets/fond-google-flow.jpg" alt="" style="position: absolute; inset: -4%; width: 108%; height: 108%; object-fit: cover; filter: blur(6px); opacity: 0.9">
+<div aria-hidden="true" style="position: absolute; inset: 0; background: linear-gradient(90deg, rgba(7,7,10,0.9) 0%, rgba(7,7,10,0.6) 60%, rgba(7,7,10,0.45) 100%)"></div>
+<div aria-hidden="true" style="position: absolute; left: 0; right: 0; bottom: 0; height: 35%; background: linear-gradient(180deg, rgba(7,7,10,0), #07070A)"></div>
+<div aria-hidden="true" style="position: absolute; top: -200px; right: -160px; width: 620px; height: 620px; border-radius: 50%; background: radial-gradient(circle, rgba(0,245,212,0.12), rgba(0,245,212,0) 70%)"></div>
+<div style="position: relative; z-index: 2; flex: 1; width: 100%; max-width: 1240px; margin: 0 auto; padding: 7vh 20px 80px">
+<p style="margin: 0; display: flex; align-items: center; gap: 12px; font-family: 'Space Mono', monospace; font-size: 15px; letter-spacing: 0.22em; color: #00F5D4"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#00F5D4" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19"></path></svg><span class="s-tw" aria-label="BIENVENUE À L'ACADÉMIE"><span class="s-t" aria-hidden="true" style="animation-delay: 0.150s">B</span><span class="s-t" aria-hidden="true" style="animation-delay: 0.185s">I</span><span class="s-t" aria-hidden="true" style="animation-delay: 0.220s">E</span><span class="s-t" aria-hidden="true" style="animation-delay: 0.255s">N</span><span class="s-t" aria-hidden="true" style="animation-delay: 0.290s">V</span><span class="s-t" aria-hidden="true" style="animation-delay: 0.325s">E</span><span class="s-t" aria-hidden="true" style="animation-delay: 0.360s">N</span><span class="s-t" aria-hidden="true" style="animation-delay: 0.395s">U</span><span class="s-t" aria-hidden="true" style="animation-delay: 0.430s">E</span><span class="s-t" aria-hidden="true" style="animation-delay: 0.465s"> </span><span class="s-t" aria-hidden="true" style="animation-delay: 0.500s">À</span><span class="s-t" aria-hidden="true" style="animation-delay: 0.535s"> </span><span class="s-t" aria-hidden="true" style="animation-delay: 0.570s">L</span><span class="s-t" aria-hidden="true" style="animation-delay: 0.605s">&#x27;</span><span class="s-t" aria-hidden="true" style="animation-delay: 0.640s">A</span><span class="s-t" aria-hidden="true" style="animation-delay: 0.675s">C</span><span class="s-t" aria-hidden="true" style="animation-delay: 0.710s">A</span><span class="s-t" aria-hidden="true" style="animation-delay: 0.745s">D</span><span class="s-t" aria-hidden="true" style="animation-delay: 0.780s">É</span><span class="s-t" aria-hidden="true" style="animation-delay: 0.815s">M</span><span class="s-t" aria-hidden="true" style="animation-delay: 0.850s">I</span><span class="s-t" aria-hidden="true" style="animation-delay: 0.885s">E</span></span></p>
+<h1 aria-label="Google Flow" style="margin: 18px 0 0; font-family: Anton, sans-serif; font-weight: 400; font-size: clamp(64px, 10vw, 150px); line-height: 0.92; color: #F2F2EE"><span aria-hidden="true"><span class="s-l " style="animation-delay: 0.45s, 3.20s">G</span><span class="s-l " style="animation-delay: 0.52s, 3.27s">O</span><span class="s-l " style="animation-delay: 0.59s, 3.34s">O</span><span class="s-l " style="animation-delay: 0.66s, 3.41s">G</span><span class="s-l " style="animation-delay: 0.73s, 3.48s">L</span><span class="s-l " style="animation-delay: 0.80s, 3.55s">E</span><span class="s-l " style="animation-delay: 0.87s, 3.62s"> </span><span class="s-l s-outline" style="animation-delay: 0.94s, 3.69s, 2.1s">F</span><span class="s-l s-outline" style="animation-delay: 1.01s, 3.76s, 2.1s">L</span><span class="s-l s-outline" style="animation-delay: 1.08s, 3.83s, 2.1s">O</span><span class="s-l s-outline" style="animation-delay: 1.15s, 3.90s, 2.1s">W</span></span></h1>
+<p aria-label="Pour gagner de l'argent" style="margin: 10px 0 0; font-family: Anton, sans-serif; font-size: clamp(32px, 4.4vw, 64px); line-height: 1; color: #00F5D4"><span aria-hidden="true"><span class="s-l" style="animation-delay: 1.15s, 3.80s">P</span><span class="s-l" style="animation-delay: 1.18s, 3.83s">O</span><span class="s-l" style="animation-delay: 1.22s, 3.87s">U</span><span class="s-l" style="animation-delay: 1.25s, 3.90s">R</span><span class="s-l" style="animation-delay: 1.29s, 3.94s"> </span><span class="s-l" style="animation-delay: 1.32s, 3.97s">G</span><span class="s-l" style="animation-delay: 1.36s, 4.01s">A</span><span class="s-l" style="animation-delay: 1.40s, 4.04s">G</span><span class="s-l" style="animation-delay: 1.43s, 4.08s">N</span><span class="s-l" style="animation-delay: 1.46s, 4.12s">E</span><span class="s-l" style="animation-delay: 1.50s, 4.15s">R</span><span class="s-l" style="animation-delay: 1.53s, 4.18s"> </span><span class="s-l" style="animation-delay: 1.57s, 4.22s">D</span><span class="s-l" style="animation-delay: 1.60s, 4.25s">E</span><span class="s-l" style="animation-delay: 1.64s, 4.29s"> </span><span class="s-l" style="animation-delay: 1.67s, 4.33s">L</span><span class="s-l" style="animation-delay: 1.71s, 4.36s">&#x27;</span><span class="s-l" style="animation-delay: 1.75s, 4.39s">A</span><span class="s-l" style="animation-delay: 1.78s, 4.43s">R</span><span class="s-l" style="animation-delay: 1.81s, 4.46s">G</span><span class="s-l" style="animation-delay: 1.85s, 4.50s">E</span><span class="s-l" style="animation-delay: 1.89s, 4.54s">N</span><span class="s-l" style="animation-delay: 1.92s, 4.57s">T</span></span></p>
+<p class="s-h3" style="margin: 26px 0 0; max-width: 560px; font-size: clamp(17px, 1.5vw, 21px); line-height: 1.55; color: #A3A39C"><strong style="color: #F2F2EE; font-weight: 700">La formation complète.</strong> Apprends à créer des vidéos IA virales et transforme cette compétence en revenus.</p>
+<div class="s-h4" style="display: flex; flex-wrap: wrap; align-items: center; gap: 14px; margin-top: 32px">
+<a href="#offre" class="s-btn" style="text-decoration: none; display: inline-flex; align-items: center; gap: 12px; padding: 18px 30px; min-height: 58px; border-radius: 999px; background: #00F5D4; color: #07070A; font-weight: 800; font-size: 17px"><svg width="14" height="14" viewBox="0 0 24 24" fill="#07070A" aria-hidden="true"><path d="M6 4v16l14-8z"></path></svg>Rejoindre – <span data-cfg="prix">2 500 F</span></a>
+<a href="#creations" class="s-btn" style="text-decoration: none; display: inline-flex; align-items: center; padding: 18px 26px; min-height: 58px; border-radius: 999px; border: 1px solid rgba(255,255,255,0.18); color: #F2F2EE; font-weight: 600; font-size: 17px">Voir les vidéos</a>
+</div>
+
+</div>
+</section>
+
+<!-- bande d'infos -->
+<div style="border-bottom: 1px solid rgba(255,255,255,0.07); background: #0B0B0F">
+<div style="max-width: 1240px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr))">
+<div style="padding: clamp(20px, 2.4vw, 34px) clamp(16px, 2vw, 30px); border-left: 1px solid rgba(255,255,255,0.08)"><p style="margin: 0; font-family: Anton, sans-serif; font-size: clamp(26px, 3vw, 42px); line-height: 1; color: #F2F2EE">RÉALISTE <span style="color: #00F5D4">+</span> ANIMÉ</p><p style="margin: 8px 0 0; font-size: 14px; color: #A3A39C">Les 2 styles de vidéos IA</p></div>
+<div style="padding: clamp(20px, 2.4vw, 34px) clamp(16px, 2vw, 30px); border-left: 1px solid rgba(255,255,255,0.08)"><p style="margin: 0; font-family: Anton, sans-serif; font-size: clamp(26px, 3vw, 42px); line-height: 1; color: #F2F2EE">GROUPE PRIVÉ</p><p style="margin: 8px 0 0; font-size: 14px; color: #A3A39C">Le formateur te suit</p></div>
+<div style="padding: clamp(20px, 2.4vw, 34px) clamp(16px, 2vw, 30px); border-left: 1px solid rgba(255,255,255,0.08)"><p style="margin: 0; font-family: Anton, sans-serif; font-size: clamp(26px, 3vw, 42px); line-height: 1; color: #F2F2EE">MISES À JOUR</p><p style="margin: 8px 0 0; font-size: 14px; color: #A3A39C">Incluses à chaque nouveauté</p></div>
+<div style="padding: clamp(20px, 2.4vw, 34px) clamp(16px, 2vw, 30px); border-left: 1px solid rgba(255,255,255,0.08)"><p style="margin: 0; font-family: Anton, sans-serif; font-size: clamp(26px, 3vw, 42px); line-height: 1; color: #F2F2EE"><span style="color: #00F5D4"><span data-cfg="prix">2 500 F</span></span></p><p style="margin: 8px 0 0; font-size: 14px; color: #A3A39C">Paiement unique, accès immédiat</p></div>
+</div>
+</div>
+
+<!-- ================= 2. POURQUOI ================= -->
+<section style="max-width: 1240px; margin: 0 auto; padding: 80px 20px 40px">
+<div class="s-rv">
+<p style="margin: 0; font-family: 'Space Mono', monospace; font-size: 13px; color: #7A7A74">01 — L'opportunité</p>
+<h2 style="margin: 10px 0 0; font-size: clamp(28px, 3.4vw, 40px); font-weight: 800; line-height: 1.15">Pourquoi apprendre à créer des vidéos IA ?</h2>
+<p style="margin: 10px 0 0; font-size: 17px; color: #A3A39C">Regarde cette vidéo : elle t'explique l'opportunité.</p>
+</div>
+<div class="s-rv yt" data-youtube="youtubeOpportunite" style="margin-top: 26px; position: relative; aspect-ratio: 16 / 9; max-width: 760px; border-radius: 20px; overflow: hidden; border: 1px solid rgba(255,255,255,0.1); background: #101015">
+<div class="yt-empty" style="position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px; text-align: center; padding: 20px">
+<span style="width: 72px; height: 72px; border-radius: 50%; background: #00F5D4; display: flex; align-items: center; justify-content: center"><svg width="26" height="26" viewBox="0 0 24 24" fill="#07070A" aria-hidden="true"><path d="M7 4v16l13-8z"></path></svg></span>
+<span style="font-weight: 700; font-size: 18px; color: #F2F2EE">La vidéo arrive très bientôt</span>
+</div>
+</div>
+<div class="s-rv" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; margin-top: 26px">
+
+<div style="display: flex; gap: 12px; align-items: flex-start; padding: 18px; border-radius: 16px; background: #0E0E13; border: 1px solid rgba(255,255,255,0.07)">
+<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#00F5D4" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none"><path d="M20 6 9 17l-5-5"></path></svg>
+<span style="font-size: 16px; line-height: 1.5; color: #D8D8D2">Tu peux commencer avec ton téléphone et un compte Google.</span>
+</div>
+
+<div style="display: flex; gap: 12px; align-items: flex-start; padding: 18px; border-radius: 16px; background: #0E0E13; border: 1px solid rgba(255,255,255,0.07)">
+<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#00F5D4" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none"><path d="M20 6 9 17l-5-5"></path></svg>
+<span style="font-size: 16px; line-height: 1.5; color: #D8D8D2">Pas de caméra, pas d&#x27;acteur, pas de studio : l&#x27;IA crée la vidéo.</span>
+</div>
+
+<div style="display: flex; gap: 12px; align-items: flex-start; padding: 18px; border-radius: 16px; background: #0E0E13; border: 1px solid rgba(255,255,255,0.07)">
+<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#00F5D4" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none"><path d="M20 6 9 17l-5-5"></path></svg>
+<span style="font-size: 16px; line-height: 1.5; color: #D8D8D2">Les vidéos IA font des vues sur TikTok, Facebook et YouTube, et les boutiques en demandent.</span>
+</div>
+
+</div>
+</section>
+
+<!-- ================= 3. CE QUE TU SAURAS CRÉER ================= -->
+<section id="creations" style="padding: 60px 0 40px">
+<div class="s-rv" style="max-width: 1240px; margin: 0 auto; padding: 0 20px">
+<p style="margin: 0; font-family: 'Space Mono', monospace; font-size: 13px; color: #7A7A74">02 — Le résultat</p>
+<h2 style="margin: 10px 0 0; font-size: clamp(28px, 3.4vw, 40px); font-weight: 800; line-height: 1.15">Voici les vidéos que tu sauras créer</h2>
+<p style="margin: 10px 0 0; font-size: 17px; color: #A3A39C">Toutes faites avec Google Flow, en suivant la méthode de la formation.</p>
+</div>
+<div style="margin-top: 30px; overflow: hidden; display: flex; flex-direction: column; gap: 14px">
+<div class="s-row-l">
+
+<div style="position: relative; flex: none; width: 170px; aspect-ratio: 9 / 16; border-radius: 16px; overflow: hidden; background: #111117; border: 1px solid rgba(255,255,255,0.08); display: flex; align-items: flex-end; padding: 12px">
+<video src="assets/video-1.mp4" poster="assets/video-1.jpg" autoplay muted loop playsinline preload="metadata" aria-label="RÉALISTE" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover"></video>
+<div aria-hidden="true" style="position: absolute; left: 0; right: 0; bottom: 0; height: 40%; background: linear-gradient(180deg, rgba(7,7,10,0), rgba(7,7,10,0.85))"></div>
+<p style="position: relative; margin: 0; font-family: 'Space Mono', monospace; font-size: 11px; letter-spacing: 0.1em; color: #00F5D4">RÉALISTE</p>
+</div>
+
+<div style="position: relative; flex: none; width: 170px; aspect-ratio: 9 / 16; border-radius: 16px; overflow: hidden; background: #111117; border: 1px solid rgba(255,255,255,0.08); display: flex; align-items: flex-end; padding: 12px">
+<video src="assets/video-2.mp4" poster="assets/video-2.jpg" autoplay muted loop playsinline preload="metadata" aria-label="ANIMÉ" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover"></video>
+<div aria-hidden="true" style="position: absolute; left: 0; right: 0; bottom: 0; height: 40%; background: linear-gradient(180deg, rgba(7,7,10,0), rgba(7,7,10,0.85))"></div>
+<p style="position: relative; margin: 0; font-family: 'Space Mono', monospace; font-size: 11px; letter-spacing: 0.1em; color: #00F5D4">ANIMÉ</p>
+</div>
+
+<div style="position: relative; flex: none; width: 170px; aspect-ratio: 9 / 16; border-radius: 16px; overflow: hidden; background: #111117; border: 1px solid rgba(255,255,255,0.08); display: flex; align-items: flex-end; padding: 12px">
+<video src="assets/video-3.mp4" poster="assets/video-3.jpg" autoplay muted loop playsinline preload="metadata" aria-label="PERSONNAGE QUI PARLE" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover"></video>
+<div aria-hidden="true" style="position: absolute; left: 0; right: 0; bottom: 0; height: 40%; background: linear-gradient(180deg, rgba(7,7,10,0), rgba(7,7,10,0.85))"></div>
+<p style="position: relative; margin: 0; font-family: 'Space Mono', monospace; font-size: 11px; letter-spacing: 0.1em; color: #00F5D4">PERSONNAGE QUI PARLE</p>
+</div>
+
+<div style="position: relative; flex: none; width: 170px; aspect-ratio: 9 / 16; border-radius: 16px; overflow: hidden; background: #111117; border: 1px solid rgba(255,255,255,0.08); display: flex; align-items: flex-end; padding: 12px">
+<video src="assets/video-1.mp4" poster="assets/video-1.jpg" autoplay muted loop playsinline preload="metadata" aria-label="RÉALISTE" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover"></video>
+<div aria-hidden="true" style="position: absolute; left: 0; right: 0; bottom: 0; height: 40%; background: linear-gradient(180deg, rgba(7,7,10,0), rgba(7,7,10,0.85))"></div>
+<p style="position: relative; margin: 0; font-family: 'Space Mono', monospace; font-size: 11px; letter-spacing: 0.1em; color: #00F5D4">RÉALISTE</p>
+</div>
+
+<div style="position: relative; flex: none; width: 170px; aspect-ratio: 9 / 16; border-radius: 16px; overflow: hidden; background: #111117; border: 1px solid rgba(255,255,255,0.08); display: flex; align-items: flex-end; padding: 12px">
+<video src="assets/video-2.mp4" poster="assets/video-2.jpg" autoplay muted loop playsinline preload="metadata" aria-label="ANIMÉ" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover"></video>
+<div aria-hidden="true" style="position: absolute; left: 0; right: 0; bottom: 0; height: 40%; background: linear-gradient(180deg, rgba(7,7,10,0), rgba(7,7,10,0.85))"></div>
+<p style="position: relative; margin: 0; font-family: 'Space Mono', monospace; font-size: 11px; letter-spacing: 0.1em; color: #00F5D4">ANIMÉ</p>
+</div>
+
+<div style="position: relative; flex: none; width: 170px; aspect-ratio: 9 / 16; border-radius: 16px; overflow: hidden; background: #111117; border: 1px solid rgba(255,255,255,0.08); display: flex; align-items: flex-end; padding: 12px">
+<video src="assets/video-3.mp4" poster="assets/video-3.jpg" autoplay muted loop playsinline preload="metadata" aria-label="PERSONNAGE QUI PARLE" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover"></video>
+<div aria-hidden="true" style="position: absolute; left: 0; right: 0; bottom: 0; height: 40%; background: linear-gradient(180deg, rgba(7,7,10,0), rgba(7,7,10,0.85))"></div>
+<p style="position: relative; margin: 0; font-family: 'Space Mono', monospace; font-size: 11px; letter-spacing: 0.1em; color: #00F5D4">PERSONNAGE QUI PARLE</p>
+</div>
+
+<div style="position: relative; flex: none; width: 170px; aspect-ratio: 9 / 16; border-radius: 16px; overflow: hidden; background: #111117; border: 1px solid rgba(255,255,255,0.08); display: flex; align-items: flex-end; padding: 12px">
+<video src="assets/video-1.mp4" poster="assets/video-1.jpg" autoplay muted loop playsinline preload="metadata" aria-label="RÉALISTE" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover"></video>
+<div aria-hidden="true" style="position: absolute; left: 0; right: 0; bottom: 0; height: 40%; background: linear-gradient(180deg, rgba(7,7,10,0), rgba(7,7,10,0.85))"></div>
+<p style="position: relative; margin: 0; font-family: 'Space Mono', monospace; font-size: 11px; letter-spacing: 0.1em; color: #00F5D4">RÉALISTE</p>
+</div>
+
+<div style="position: relative; flex: none; width: 170px; aspect-ratio: 9 / 16; border-radius: 16px; overflow: hidden; background: #111117; border: 1px solid rgba(255,255,255,0.08); display: flex; align-items: flex-end; padding: 12px">
+<video src="assets/video-2.mp4" poster="assets/video-2.jpg" autoplay muted loop playsinline preload="metadata" aria-label="ANIMÉ" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover"></video>
+<div aria-hidden="true" style="position: absolute; left: 0; right: 0; bottom: 0; height: 40%; background: linear-gradient(180deg, rgba(7,7,10,0), rgba(7,7,10,0.85))"></div>
+<p style="position: relative; margin: 0; font-family: 'Space Mono', monospace; font-size: 11px; letter-spacing: 0.1em; color: #00F5D4">ANIMÉ</p>
+</div>
+
+<div style="position: relative; flex: none; width: 170px; aspect-ratio: 9 / 16; border-radius: 16px; overflow: hidden; background: #111117; border: 1px solid rgba(255,255,255,0.08); display: flex; align-items: flex-end; padding: 12px">
+<video src="assets/video-3.mp4" poster="assets/video-3.jpg" autoplay muted loop playsinline preload="metadata" aria-label="PERSONNAGE QUI PARLE" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover"></video>
+<div aria-hidden="true" style="position: absolute; left: 0; right: 0; bottom: 0; height: 40%; background: linear-gradient(180deg, rgba(7,7,10,0), rgba(7,7,10,0.85))"></div>
+<p style="position: relative; margin: 0; font-family: 'Space Mono', monospace; font-size: 11px; letter-spacing: 0.1em; color: #00F5D4">PERSONNAGE QUI PARLE</p>
+</div>
+
+</div>
+<div class="s-row-r">
+
+<div style="position: relative; flex: none; width: 170px; aspect-ratio: 9 / 16; border-radius: 16px; overflow: hidden; background: #111117; border: 1px solid rgba(255,255,255,0.08); display: flex; align-items: flex-end; padding: 12px">
+<video src="assets/video-3.mp4" poster="assets/video-3.jpg" autoplay muted loop playsinline preload="metadata" aria-label="PERSONNAGE QUI PARLE" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover"></video>
+<div aria-hidden="true" style="position: absolute; left: 0; right: 0; bottom: 0; height: 40%; background: linear-gradient(180deg, rgba(7,7,10,0), rgba(7,7,10,0.85))"></div>
+<p style="position: relative; margin: 0; font-family: 'Space Mono', monospace; font-size: 11px; letter-spacing: 0.1em; color: #00F5D4">PERSONNAGE QUI PARLE</p>
+</div>
+
+<div style="position: relative; flex: none; width: 170px; aspect-ratio: 9 / 16; border-radius: 16px; overflow: hidden; background: #111117; border: 1px solid rgba(255,255,255,0.08); display: flex; align-items: flex-end; padding: 12px">
+<video src="assets/video-1.mp4" poster="assets/video-1.jpg" autoplay muted loop playsinline preload="metadata" aria-label="RÉALISTE" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover"></video>
+<div aria-hidden="true" style="position: absolute; left: 0; right: 0; bottom: 0; height: 40%; background: linear-gradient(180deg, rgba(7,7,10,0), rgba(7,7,10,0.85))"></div>
+<p style="position: relative; margin: 0; font-family: 'Space Mono', monospace; font-size: 11px; letter-spacing: 0.1em; color: #00F5D4">RÉALISTE</p>
+</div>
+
+<div style="position: relative; flex: none; width: 170px; aspect-ratio: 9 / 16; border-radius: 16px; overflow: hidden; background: #111117; border: 1px solid rgba(255,255,255,0.08); display: flex; align-items: flex-end; padding: 12px">
+<video src="assets/video-2.mp4" poster="assets/video-2.jpg" autoplay muted loop playsinline preload="metadata" aria-label="ANIMÉ" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover"></video>
+<div aria-hidden="true" style="position: absolute; left: 0; right: 0; bottom: 0; height: 40%; background: linear-gradient(180deg, rgba(7,7,10,0), rgba(7,7,10,0.85))"></div>
+<p style="position: relative; margin: 0; font-family: 'Space Mono', monospace; font-size: 11px; letter-spacing: 0.1em; color: #00F5D4">ANIMÉ</p>
+</div>
+
+<div style="position: relative; flex: none; width: 170px; aspect-ratio: 9 / 16; border-radius: 16px; overflow: hidden; background: #111117; border: 1px solid rgba(255,255,255,0.08); display: flex; align-items: flex-end; padding: 12px">
+<video src="assets/video-3.mp4" poster="assets/video-3.jpg" autoplay muted loop playsinline preload="metadata" aria-label="PERSONNAGE QUI PARLE" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover"></video>
+<div aria-hidden="true" style="position: absolute; left: 0; right: 0; bottom: 0; height: 40%; background: linear-gradient(180deg, rgba(7,7,10,0), rgba(7,7,10,0.85))"></div>
+<p style="position: relative; margin: 0; font-family: 'Space Mono', monospace; font-size: 11px; letter-spacing: 0.1em; color: #00F5D4">PERSONNAGE QUI PARLE</p>
+</div>
+
+<div style="position: relative; flex: none; width: 170px; aspect-ratio: 9 / 16; border-radius: 16px; overflow: hidden; background: #111117; border: 1px solid rgba(255,255,255,0.08); display: flex; align-items: flex-end; padding: 12px">
+<video src="assets/video-1.mp4" poster="assets/video-1.jpg" autoplay muted loop playsinline preload="metadata" aria-label="RÉALISTE" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover"></video>
+<div aria-hidden="true" style="position: absolute; left: 0; right: 0; bottom: 0; height: 40%; background: linear-gradient(180deg, rgba(7,7,10,0), rgba(7,7,10,0.85))"></div>
+<p style="position: relative; margin: 0; font-family: 'Space Mono', monospace; font-size: 11px; letter-spacing: 0.1em; color: #00F5D4">RÉALISTE</p>
+</div>
+
+<div style="position: relative; flex: none; width: 170px; aspect-ratio: 9 / 16; border-radius: 16px; overflow: hidden; background: #111117; border: 1px solid rgba(255,255,255,0.08); display: flex; align-items: flex-end; padding: 12px">
+<video src="assets/video-2.mp4" poster="assets/video-2.jpg" autoplay muted loop playsinline preload="metadata" aria-label="ANIMÉ" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover"></video>
+<div aria-hidden="true" style="position: absolute; left: 0; right: 0; bottom: 0; height: 40%; background: linear-gradient(180deg, rgba(7,7,10,0), rgba(7,7,10,0.85))"></div>
+<p style="position: relative; margin: 0; font-family: 'Space Mono', monospace; font-size: 11px; letter-spacing: 0.1em; color: #00F5D4">ANIMÉ</p>
+</div>
+
+<div style="position: relative; flex: none; width: 170px; aspect-ratio: 9 / 16; border-radius: 16px; overflow: hidden; background: #111117; border: 1px solid rgba(255,255,255,0.08); display: flex; align-items: flex-end; padding: 12px">
+<video src="assets/video-3.mp4" poster="assets/video-3.jpg" autoplay muted loop playsinline preload="metadata" aria-label="PERSONNAGE QUI PARLE" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover"></video>
+<div aria-hidden="true" style="position: absolute; left: 0; right: 0; bottom: 0; height: 40%; background: linear-gradient(180deg, rgba(7,7,10,0), rgba(7,7,10,0.85))"></div>
+<p style="position: relative; margin: 0; font-family: 'Space Mono', monospace; font-size: 11px; letter-spacing: 0.1em; color: #00F5D4">PERSONNAGE QUI PARLE</p>
+</div>
+
+<div style="position: relative; flex: none; width: 170px; aspect-ratio: 9 / 16; border-radius: 16px; overflow: hidden; background: #111117; border: 1px solid rgba(255,255,255,0.08); display: flex; align-items: flex-end; padding: 12px">
+<video src="assets/video-1.mp4" poster="assets/video-1.jpg" autoplay muted loop playsinline preload="metadata" aria-label="RÉALISTE" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover"></video>
+<div aria-hidden="true" style="position: absolute; left: 0; right: 0; bottom: 0; height: 40%; background: linear-gradient(180deg, rgba(7,7,10,0), rgba(7,7,10,0.85))"></div>
+<p style="position: relative; margin: 0; font-family: 'Space Mono', monospace; font-size: 11px; letter-spacing: 0.1em; color: #00F5D4">RÉALISTE</p>
+</div>
+
+<div style="position: relative; flex: none; width: 170px; aspect-ratio: 9 / 16; border-radius: 16px; overflow: hidden; background: #111117; border: 1px solid rgba(255,255,255,0.08); display: flex; align-items: flex-end; padding: 12px">
+<video src="assets/video-2.mp4" poster="assets/video-2.jpg" autoplay muted loop playsinline preload="metadata" aria-label="ANIMÉ" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover"></video>
+<div aria-hidden="true" style="position: absolute; left: 0; right: 0; bottom: 0; height: 40%; background: linear-gradient(180deg, rgba(7,7,10,0), rgba(7,7,10,0.85))"></div>
+<p style="position: relative; margin: 0; font-family: 'Space Mono', monospace; font-size: 11px; letter-spacing: 0.1em; color: #00F5D4">ANIMÉ</p>
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- ================= PREUVES : MONÉTISATION ================= -->
+<section style="max-width: 1240px; margin: 0 auto; padding: 70px 20px 40px">
+<div class="s-rv">
+<p style="margin: 0; font-family: 'Space Mono', monospace; font-size: 13px; color: #7A7A74">03 — Les preuves</p>
+<h2 style="margin: 10px 0 0; font-size: clamp(28px, 3.4vw, 44px); font-weight: 800; line-height: 1.15">La monétisation TikTok paie vraiment</h2>
+<p style="margin: 12px 0 0; max-width: 720px; font-size: 17px; line-height: 1.6; color: #A3A39C">Ce ne sont pas des promesses. Voici les vraies statistiques TikTok du formateur, sur des vidéos créées avec l'IA : des centaines de milliers de vues, des milliers d'abonnés, et des revenus versés par TikTok.</p>
+</div>
+<div class="s-rv" style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(12px, 2vw, 28px); margin-top: 30px">
+<div><p style="margin: 0 0 10px; font-family: Anton, sans-serif; font-size: clamp(30px, 3vw, 40px); line-height: 1; color: #00F5D4">536,8 K vues</p><img src="assets/preuve-tiktok-1.jpg" alt="Statistiques TikTok : 536,8 K vues, 41,4 K nouveaux abonnés, 85,09 dollars de récompenses estimées" style="width: 100%; border-radius: 16px; border: 1px solid rgba(255,255,255,0.1); display: block"><p style="margin: 12px 0 0; font-size: 15px; line-height: 1.5; color: #A3A39C">Une seule vidéo IA : <strong style="color: #F2F2EE">41,4 K nouveaux abonnés</strong> et des récompenses en dollars.</p></div>
+<div><p style="margin: 0 0 10px; font-family: Anton, sans-serif; font-size: clamp(30px, 3vw, 40px); line-height: 1; color: #00F5D4">195,1 K vues</p><img src="assets/preuve-tiktok-2.jpg" alt="Statistiques TikTok : 195,1 K vues et 11,5 K nouveaux abonnés" style="width: 100%; border-radius: 16px; border: 1px solid rgba(255,255,255,0.1); display: block"><p style="margin: 12px 0 0; font-size: 15px; line-height: 1.5; color: #A3A39C">Une autre vidéo IA : <strong style="color: #F2F2EE">11,5 K nouveaux abonnés</strong>.</p></div>
+</div>
+</section>
+
+<!-- ================= LES OUTILS ================= -->
+<section style="max-width: 1240px; margin: 0 auto; padding: 70px 20px 30px">
+<div class="s-rv">
+<p style="margin: 0; font-family: 'Space Mono', monospace; font-size: 13px; color: #7A7A74">Les outils</p>
+<h2 style="margin: 10px 0 0; font-size: clamp(28px, 3.4vw, 44px); font-weight: 800; line-height: 1.15">Les outils que tu vas maîtriser</h2>
+<p style="margin: 12px 0 0; max-width: 680px; font-size: 17px; line-height: 1.6; color: #A3A39C">De l'image à la vidéo virale : 3 outils, utilisés dans l'ordre. Tu apprends à les enchaîner comme un pro.</p>
+</div>
+<div class="s-rv s-tools" style="position: relative; margin-top: 34px">
+<div class="s-flowline" aria-hidden="true"></div>
+<div style="position: relative; display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 18px">
+<div class="s-tool">
+<div class="s-tool-vis"><img class="s-tool-logo" src="assets/logo-chatgpt.png" alt="ChatGPT" style="width: 84px; height: 84px; object-fit: contain"><span class="s-tool-n">01</span></div>
+<p style="margin: 16px 0 0; font-weight: 800; font-size: 19px">ChatGPT</p>
+<p style="margin: 6px 0 0; font-size: 15px; line-height: 1.5; color: #A3A39C">Tu crées les images de ta vidéo : personnages, décors, scènes.</p>
+</div>
+<div class="s-tool">
+<div class="s-tool-vis"><img src="assets/google-flow.jpg" alt="Google Veo Flow" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover"><span style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(7,7,10,0) 50%, rgba(7,7,10,0.6))"></span><span class="s-tool-n">02</span></div>
+<p style="margin: 16px 0 0; font-weight: 800; font-size: 19px">Google Flow</p>
+<p style="margin: 6px 0 0; font-size: 15px; line-height: 1.5; color: #A3A39C">Tu animes tes images et tu leur donnes vie.</p>
+</div>
+<div class="s-tool">
+<div class="s-tool-vis"><img class="s-tool-logo" src="assets/logo-capcut.png" alt="CapCut" style="width: 96px; height: 80px; object-fit: contain; animation-delay: -1.5s"><span class="s-tool-n">03</span></div>
+<p style="margin: 16px 0 0; font-weight: 800; font-size: 19px">CapCut</p>
+<p style="margin: 6px 0 0; font-size: 15px; line-height: 1.5; color: #A3A39C">Tu montes ta vidéo et tu l'exportes prête pour TikTok.</p>
+</div>
+</div>
+</div>
+<div class="s-rv" style="margin-top: 22px; display: flex; justify-content: center">
+<span style="display: inline-flex; align-items: center; gap: 10px; padding: 12px 20px; border-radius: 999px; background: rgba(0,245,212,0.08); border: 1px solid rgba(0,245,212,0.4); font-weight: 700; font-size: 15px; color: #F2F2EE">Résultat : ta vidéo virale, prête à publier sur TikTok <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#00F5D4" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span>
+</div>
+</section>
+
+<!-- ================= 4. CE QUE TU VAS APPRENDRE ================= -->
+<section style="max-width: 1240px; margin: 0 auto; padding: 60px 20px 40px">
+<div class="s-rv">
+<p style="margin: 0; font-family: 'Space Mono', monospace; font-size: 13px; color: #7A7A74">04 — Le programme</p>
+<h2 style="margin: 10px 0 0; font-size: clamp(28px, 3.4vw, 40px); font-weight: 800; line-height: 1.15">Ce que tu vas apprendre</h2>
+<p style="margin: 10px 0 0; font-size: 17px; color: #A3A39C">4 parties pratiques, dans l'ordre, et des bonus. De l'image à la vidéo virale, prête à publier.</p>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 14px; margin-top: 26px">
+
+<div class="s-rv s-card" style="padding: 22px; border-radius: 18px; background: #0E0E13; border: 1px solid rgba(255,255,255,0.08)">
+<div style="display: flex; justify-content: space-between; align-items: center">
+<span style="width: 40px; height: 40px; border-radius: 12px; background: rgba(0,245,212,0.1); border: 1px solid rgba(0,245,212,0.25); display: flex; align-items: center; justify-content: center; font-family: Anton, sans-serif; font-size: 18px; color: #00F5D4">0</span>
+<span style="font-size: 12px; font-weight: 700; color: #A3A39C; padding: 5px 10px; border-radius: 999px; background: rgba(255,255,255,0.06)">Introduction</span>
+</div>
+<h3 style="margin: 16px 0 0; font-size: 19px; font-weight: 800">Comprendre la méthode</h3>
+<p style="margin: 8px 0 0; font-size: 15px; line-height: 1.55; color: #A3A39C">Comment fonctionnent les vidéos IA virales et les étapes pour passer d&#x27;une idée à une vidéo publiée.</p>
+<span style="margin-top: 14px; display: inline-flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 700; color: #F2F2EE; padding: 6px 12px; border-radius: 999px; border: 1px solid rgba(255,255,255,0.14)"><span style="width: 7px; height: 7px; border-radius: 50%; background: #00F5D4"></span>Partie 0</span>
+</div>
+
+<div class="s-rv s-card" style="padding: 22px; border-radius: 18px; background: #0E0E13; border: 1px solid rgba(255,255,255,0.08)">
+<div style="display: flex; justify-content: space-between; align-items: center">
+<span style="width: 40px; height: 40px; border-radius: 12px; background: rgba(0,245,212,0.1); border: 1px solid rgba(0,245,212,0.25); display: flex; align-items: center; justify-content: center; font-family: Anton, sans-serif; font-size: 18px; color: #00F5D4">1</span>
+<span style="font-size: 12px; font-weight: 700; color: #A3A39C; padding: 5px 10px; border-radius: 999px; background: rgba(255,255,255,0.06)">Partie 1</span>
+</div>
+<h3 style="margin: 16px 0 0; font-size: 19px; font-weight: 800">Créer tes images avec ChatGPT</h3>
+<p style="margin: 8px 0 0; font-size: 15px; line-height: 1.55; color: #A3A39C">Générer les personnages et les scènes de ta vidéo, image par image (2 vidéos).</p>
+<span style="margin-top: 14px; display: inline-flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 700; color: #F2F2EE; padding: 6px 12px; border-radius: 999px; border: 1px solid rgba(255,255,255,0.14)"><span style="width: 7px; height: 7px; border-radius: 50%; background: #00F5D4"></span>ChatGPT</span>
+</div>
+
+<div class="s-rv s-card" style="padding: 22px; border-radius: 18px; background: #0E0E13; border: 1px solid rgba(255,255,255,0.08)">
+<div style="display: flex; justify-content: space-between; align-items: center">
+<span style="width: 40px; height: 40px; border-radius: 12px; background: rgba(0,245,212,0.1); border: 1px solid rgba(0,245,212,0.25); display: flex; align-items: center; justify-content: center; font-family: Anton, sans-serif; font-size: 18px; color: #00F5D4">2</span>
+<span style="font-size: 12px; font-weight: 700; color: #A3A39C; padding: 5px 10px; border-radius: 999px; background: rgba(255,255,255,0.06)">Partie 2</span>
+</div>
+<h3 style="margin: 16px 0 0; font-size: 19px; font-weight: 800">Animer tes images avec Google Flow</h3>
+<p style="margin: 8px 0 0; font-size: 15px; line-height: 1.55; color: #A3A39C">Donner vie à tes images : mouvements, expressions, personnages qui parlent.</p>
+<span style="margin-top: 14px; display: inline-flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 700; color: #F2F2EE; padding: 6px 12px; border-radius: 999px; border: 1px solid rgba(255,255,255,0.14)"><span style="width: 7px; height: 7px; border-radius: 50%; background: #00F5D4"></span>Google Flow</span>
+</div>
+
+<div class="s-rv s-card" style="padding: 22px; border-radius: 18px; background: #0E0E13; border: 1px solid rgba(255,255,255,0.08)">
+<div style="display: flex; justify-content: space-between; align-items: center">
+<span style="width: 40px; height: 40px; border-radius: 12px; background: rgba(0,245,212,0.1); border: 1px solid rgba(0,245,212,0.25); display: flex; align-items: center; justify-content: center; font-family: Anton, sans-serif; font-size: 18px; color: #00F5D4">3</span>
+<span style="font-size: 12px; font-weight: 700; color: #A3A39C; padding: 5px 10px; border-radius: 999px; background: rgba(255,255,255,0.06)">Partie 3</span>
+</div>
+<h3 style="margin: 16px 0 0; font-size: 19px; font-weight: 800">Monter ta vidéo avec CapCut</h3>
+<p style="margin: 8px 0 0; font-size: 15px; line-height: 1.55; color: #A3A39C">Assembler tes scènes, ajouter le son et les textes, et exporter une vidéo prête pour TikTok.</p>
+<span style="margin-top: 14px; display: inline-flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 700; color: #F2F2EE; padding: 6px 12px; border-radius: 999px; border: 1px solid rgba(255,255,255,0.14)"><span style="width: 7px; height: 7px; border-radius: 50%; background: #00F5D4"></span>CapCut</span>
+</div>
+
+<div class="s-rv s-card" style="padding: 22px; border-radius: 18px; background: #0E0E13; border: 1px solid rgba(255,255,255,0.08)">
+<div style="display: flex; justify-content: space-between; align-items: center">
+<span style="width: 40px; height: 40px; border-radius: 12px; background: rgba(0,245,212,0.1); border: 1px solid rgba(0,245,212,0.25); display: flex; align-items: center; justify-content: center; font-family: Anton, sans-serif; font-size: 18px; color: #00F5D4">+</span>
+<span style="font-size: 12px; font-weight: 700; color: #A3A39C; padding: 5px 10px; border-radius: 999px; background: rgba(255,255,255,0.06)">Bonus</span>
+</div>
+<h3 style="margin: 16px 0 0; font-size: 19px; font-weight: 800">30 histoires de fruits virales + 2 vidéos bonus</h3>
+<p style="margin: 8px 0 0; font-size: 15px; line-height: 1.55; color: #A3A39C">Un document de 30 idées d&#x27;histoires prêtes à l&#x27;emploi pour TikTok, et 2 vidéos bonus.</p>
+<span style="margin-top: 14px; display: inline-flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 700; color: #F2F2EE; padding: 6px 12px; border-radius: 999px; border: 1px solid rgba(255,255,255,0.14)"><span style="width: 7px; height: 7px; border-radius: 50%; background: #00F5D4"></span>Document + vidéos</span>
+</div>
+
+</div>
+<p class="s-rv" style="margin: 16px 0 0; display: inline-flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 600; color: #00F5D4"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00F5D4" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 1 1-3-6.7L21 8M21 3v5h-5"></path></svg>Mises à jour incluses à chaque nouveauté de Google Flow</p>
+</section>
+
+<!-- ================= 5. ACCOMPAGNEMENT ================= -->
+<section style="max-width: 1240px; margin: 0 auto; padding: 60px 20px 40px">
+<div class="s-rv" style="display: flex; flex-wrap: wrap; gap: 32px; align-items: center; padding: clamp(24px, 4vw, 44px); border-radius: 24px; background: #0E0E13; border: 1px solid rgba(255,255,255,0.08)">
+<div style="flex: 1 1 380px; min-width: 0">
+<p style="margin: 0; font-family: 'Space Mono', monospace; font-size: 13px; color: #7A7A74">05 — L'accompagnement</p>
+<h2 style="margin: 10px 0 0; font-size: clamp(26px, 3vw, 36px); font-weight: 800; line-height: 1.2">Tu n'es pas seul(e) : le formateur te suit dans un groupe privé</h2>
+<p style="margin: 14px 0 0; font-size: 16px; line-height: 1.65; color: #A3A39C">Après ton paiement, tu rejoins le groupe des apprenants. Tu montres tes vidéos, tu poses tes questions, et le formateur, qui maîtrise Google Flow, te répond et t'aide à corriger.</p>
+<p style="margin: 12px 0 0; font-size: 16px; line-height: 1.65; color: #A3A39C">Une question avant de payer ? Écris au support sur WhatsApp ou Telegram : on te répond avant ton achat.</p>
+</div>
+<figure style="flex: 1 1 340px; min-width: 0; margin: 0"><img src="assets/groupe.jpg" alt="Groupe WhatsApp Accompagnement sur la formation pour générer des vidéos avec l'IA : 64 membres" style="width: 100%; border-radius: 18px; border: 1px solid rgba(255,255,255,0.1); display: block"><figcaption style="margin-top: 10px; font-size: 14px; color: #A3A39C">Notre groupe d'accompagnement : <strong style="color: #00F5D4">déjà 64 membres</strong>.</figcaption></figure>
+</div>
+</section>
+
+<!-- ================= 6. QUE CONTIENT LA FORMATION ================= -->
+<section style="max-width: 1240px; margin: 0 auto; padding: 60px 20px 40px">
+<div class="s-rv">
+<p style="margin: 0; font-family: 'Space Mono', monospace; font-size: 13px; color: #7A7A74">06 — Le contenu</p>
+<h2 style="margin: 10px 0 0; font-size: clamp(28px, 3.4vw, 40px); font-weight: 800">Que contient la formation ?</h2>
+<p style="margin: 10px 0 0; font-size: 17px; color: #A3A39C">Des vidéos pré-enregistrées, que tu regardes à ton rythme.</p>
+</div>
+<div class="s-rv" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; margin-top: 26px">
+<div style="padding: 24px; border-radius: 18px; background: #0E0E13; border: 1px solid rgba(255,255,255,0.08)"><p style="margin: 0; font-family: Anton, sans-serif; font-size: 44px; color: #00F5D4">4 PARTIES</p><p style="margin: 6px 0 0; font-size: 15px; color: #A3A39C">ChatGPT, Google Flow, CapCut, pas à pas</p></div>
+<div style="padding: 24px; border-radius: 18px; background: #0E0E13; border: 1px solid rgba(255,255,255,0.08)"><p style="margin: 0; font-family: Anton, sans-serif; font-size: 44px; color: #F2F2EE">30 HISTOIRES</p><p style="margin: 6px 0 0; font-size: 15px; color: #A3A39C">virales prêtes à l'emploi, en bonus</p></div>
+<div style="padding: 24px; border-radius: 18px; background: #0E0E13; border: 1px solid rgba(255,255,255,0.08)"><p style="margin: 0; font-family: Anton, sans-serif; font-size: 44px; color: #F2F2EE">Groupe</p><p style="margin: 6px 0 0; font-size: 15px; color: #A3A39C">privé avec le formateur pour te suivre</p></div>
+<div style="padding: 24px; border-radius: 18px; background: #0E0E13; border: 1px solid rgba(255,255,255,0.08)"><p style="margin: 0; font-family: Anton, sans-serif; font-size: 44px; color: #00F5D4">À vie</p><p style="margin: 6px 0 0; font-size: 15px; color: #A3A39C">accès à vie + mises à jour incluses</p></div>
+</div>
+</section>
+
+<!-- ================= RÉSULTATS DES APPRENANTS ================= -->
+<section style="max-width: 1240px; margin: 0 auto; padding: 70px 20px 40px">
+<div class="s-rv">
+<p style="margin: 0; font-family: 'Space Mono', monospace; font-size: 13px; color: #7A7A74">Ils ont appris, ils ont réussi</p>
+<h2 style="margin: 10px 0 0; font-size: clamp(28px, 3.4vw, 44px); font-weight: 800; line-height: 1.15">Les résultats des apprenants</h2>
+</div>
+<div class="s-rv" style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(12px, 2vw, 28px); margin-top: 30px">
+<figure style="margin: 0"><img src="assets/apprenant-2.jpg" alt="Message d'un apprenant : 1,5 M de vues, il a atteint la monétisation TikTok grâce à la formation" style="width: 100%; border-radius: 16px; border: 1px solid rgba(255,255,255,0.1); display: block"><figcaption style="margin: 12px 0 0; font-size: 15px; line-height: 1.5; color: #A3A39C"><strong style="color: #00F5D4">1,5 M de vues</strong> : il atteint la monétisation TikTok après la formation.</figcaption></figure>
+<figure style="margin: 0"><img src="assets/apprenant-1.jpg" alt="Message d'un apprenant : 72,4 K vues sur sa vidéo générée" style="width: 100%; border-radius: 16px; border: 1px solid rgba(255,255,255,0.1); display: block"><figcaption style="margin: 12px 0 0; font-size: 15px; line-height: 1.5; color: #A3A39C"><strong style="color: #00F5D4">72,4 K vues</strong> : il partage les résultats de sa vidéo générée.</figcaption></figure>
+</div>
+</section>
+
+<!-- ================= 7. OFFRE ================= -->
+<section id="offre" style="max-width: 1240px; margin: 0 auto; padding: 60px 20px 40px">
+<h2 class="s-rv" style="margin: 0; text-align: center; font-size: clamp(28px, 3.4vw, 40px); font-weight: 800">Rejoins la formation</h2>
+<div class="s-rv" style="max-width: 520px; margin: 26px auto 0; padding: 28px; border-radius: 24px; background: #0E0E13; border: 1.5px solid rgba(0,245,212,0.5)">
+<span style="font-size: 12px; font-weight: 800; color: #07070A; background: #00F5D4; padding: 6px 12px; border-radius: 999px">Offre de lancement</span>
+<h3 style="margin: 16px 0 0; font-size: 22px; font-weight: 800">Formation complète Google Flow</h3>
+<div style="display: flex; align-items: baseline; gap: 12px; margin-top: 10px; flex-wrap: wrap">
+<span style="font-family: Anton, sans-serif; font-size: 60px; line-height: 1"><span data-cfg="prix">2 500 F</span></span>
+<span style="font-size: 18px; color: #7A7A74; text-decoration: line-through"><span data-cfg="prixBarre">4 000 F</span></span>
+</div>
+<p style="margin: 12px 0 0; display: flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 700; color: #00F5D4"><span class="s-dot" style="width: 8px; height: 8px; border-radius: 50%; background: #00F5D4; flex: none"></span>Prix de lancement réservé aux <span data-cfg="placesPromo">50</span> premiers inscrits, ensuite <span data-cfg="prixBarre">4 000 F</span></p>
+<div style="display: flex; flex-direction: column; gap: 12px; margin-top: 22px">
+
+<div style="display: flex; gap: 10px; align-items: flex-start; font-size: 15px; line-height: 1.5; color: #D8D8D2"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#00F5D4" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none; margin-top: 1px"><path d="M20 6 9 17l-5-5"></path></svg><span>La formation complète : ChatGPT, Google Flow et CapCut</span></div>
+
+<div style="display: flex; gap: 10px; align-items: flex-start; font-size: 15px; line-height: 1.5; color: #D8D8D2"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#00F5D4" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none; margin-top: 1px"><path d="M20 6 9 17l-5-5"></path></svg><span>Bonus : 30 histoires de fruits virales pour TikTok</span></div>
+
+<div style="display: flex; gap: 10px; align-items: flex-start; font-size: 15px; line-height: 1.5; color: #D8D8D2"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#00F5D4" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none; margin-top: 1px"><path d="M20 6 9 17l-5-5"></path></svg><span>4 parties vidéo + 2 vidéos bonus, à ton rythme</span></div>
+
+<div style="display: flex; gap: 10px; align-items: flex-start; font-size: 15px; line-height: 1.5; color: #D8D8D2"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#00F5D4" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none; margin-top: 1px"><path d="M20 6 9 17l-5-5"></path></svg><span>Accès au groupe privé : le formateur répond à tes questions</span></div>
+
+<div style="display: flex; gap: 10px; align-items: flex-start; font-size: 15px; line-height: 1.5; color: #D8D8D2"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#00F5D4" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none; margin-top: 1px"><path d="M20 6 9 17l-5-5"></path></svg><span>Les mises à jour de la formation</span></div>
+
+<div style="display: flex; gap: 10px; align-items: flex-start; font-size: 15px; line-height: 1.5; color: #D8D8D2"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#00F5D4" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none; margin-top: 1px"><path d="M20 6 9 17l-5-5"></path></svg><span>Paiement unique, accès immédiat</span></div>
+
+</div>
+<a href="#offre" data-link="paiement" target="_blank" rel="noopener" class="s-btn" style="margin-top: 24px; display: flex; align-items: center; justify-content: center; min-height: 54px; border-radius: 14px; background: #00F5D4; color: #07070A; text-decoration: none; font-weight: 800; font-size: 16px">Payer maintenant</a>
+<p style="margin: 18px 0 10px; text-align: center; font-size: 13px; color: #7A7A74">Paiement sécurisé par Chariow</p>
+<div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 8px">
+<span style="height: 40px; padding: 4px 8px; border-radius: 10px; background: #FFFFFF; display: flex; align-items: center"><img src="assets/pay-orange.png" alt="Orange Money" style="height: 30px"></span>
+<span style="height: 40px; padding: 4px; border-radius: 10px; background: #FFFFFF; display: flex; align-items: center"><img src="assets/pay-mtn.jpg" alt="MTN Mobile Money" style="height: 32px; border-radius: 6px"></span>
+<span style="height: 40px; padding: 4px; border-radius: 10px; background: #FFFFFF; display: flex; align-items: center"><img src="assets/pay-wave.jpg" alt="Wave" style="height: 32px; border-radius: 6px"></span>
+<span style="height: 40px; padding: 4px 8px; border-radius: 10px; background: #FFFFFF; display: flex; align-items: center"><img src="assets/pay-moov.png" alt="Moov Money" style="height: 30px"></span>
+<span style="height: 40px; padding: 4px 8px; border-radius: 10px; background: #FFFFFF; display: flex; align-items: center"><img src="assets/pay-carte.png" alt="Carte bancaire" style="height: 28px"></span>
+</div>
+</div>
+</section>
+
+<!-- ================= 10. COMMENT ACHETER (affiché seulement si le lien YouTube est rempli) ================= -->
+<section id="section-comment-acheter" hidden style="max-width: 1240px; margin: 0 auto; padding: 60px 20px 40px">
+<div class="s-rv">
+<h2 style="margin: 0; font-size: clamp(28px, 3.4vw, 40px); font-weight: 800">Voici comment acheter la formation</h2>
+<p style="margin: 10px 0 0; font-size: 17px; color: #A3A39C">Regarde ces quelques minutes pour voir le paiement pas à pas et ce que tu reçois ensuite.</p>
+</div>
+<div class="s-rv yt" data-youtube="youtubeCommentPayer" style="margin-top: 22px; position: relative; aspect-ratio: 16 / 9; max-width: 760px; border-radius: 20px; overflow: hidden; border: 1px solid rgba(255,255,255,0.1); background: #101015"></div>
+</section>
+
+<!-- ================= 11. FAQ ================= -->
+<section id="faq" style="max-width: 1240px; margin: 0 auto; padding: 60px 20px 40px">
+<h2 class="s-rv" style="margin: 0; font-size: clamp(28px, 3.4vw, 40px); font-weight: 800">Questions fréquentes</h2>
+<div style="display: flex; flex-direction: column; gap: 10px; margin-top: 22px; max-width: 820px">
+
+<div class="s-rv" style="border-radius: 16px; background: #0E0E13; border: 1px solid rgba(255,255,255,0.08)">
+<button type="button" class="faq-q" aria-expanded="false" style="width: 100%; min-height: 56px; padding: 16px 18px; background: transparent; border: 0; color: #F2F2EE; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 16px; font-weight: 700; text-align: left; display: flex; justify-content: space-between; align-items: center; gap: 14px; cursor: pointer">
+<span>De quoi ai-je besoin pour commencer ? Faut-il un ordinateur ?</span>
+<span style="flex: none; width: 28px; height: 28px; border-radius: 50%; background: rgba(0,245,212,0.12); color: #00F5D4; display: inline-flex; align-items: center; justify-content: center; font-size: 18px; line-height: 1">+</span>
+</button>
+<p class="faq-a" hidden style="margin: 0; padding: 0 18px 18px; font-size: 15px; line-height: 1.6; color: #A3A39C">Pas besoin d'ordinateur : un téléphone suffit largement. Il te faut juste un compte Google et une connexion internet.</p>
+</div>
+
+<div class="s-rv" style="border-radius: 16px; background: #0E0E13; border: 1px solid rgba(255,255,255,0.08)">
+<button type="button" class="faq-q" aria-expanded="false" style="width: 100%; min-height: 56px; padding: 16px 18px; background: transparent; border: 0; color: #F2F2EE; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 16px; font-weight: 700; text-align: left; display: flex; justify-content: space-between; align-items: center; gap: 14px; cursor: pointer">
+<span>Google Flow est-il payant ?</span>
+<span style="flex: none; width: 28px; height: 28px; border-radius: 50%; background: rgba(0,245,212,0.12); color: #00F5D4; display: inline-flex; align-items: center; justify-content: center; font-size: 18px; line-height: 1">+</span>
+</button>
+<p class="faq-a" hidden style="margin: 0; padding: 0 18px 18px; font-size: 15px; line-height: 1.6; color: #A3A39C">Google Flow s&#x27;utilise avec un compte Google. La version gratuite donne des crédits chaque jour pour créer. On t&#x27;explique tout dans la formation.</p>
+</div>
+
+<div class="s-rv" style="border-radius: 16px; background: #0E0E13; border: 1px solid rgba(255,255,255,0.08)">
+<button type="button" class="faq-q" aria-expanded="false" style="width: 100%; min-height: 56px; padding: 16px 18px; background: transparent; border: 0; color: #F2F2EE; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 16px; font-weight: 700; text-align: left; display: flex; justify-content: space-between; align-items: center; gap: 14px; cursor: pointer">
+<span>Que se passe-t-il après le paiement ?</span>
+<span style="flex: none; width: 28px; height: 28px; border-radius: 50%; background: rgba(0,245,212,0.12); color: #00F5D4; display: inline-flex; align-items: center; justify-content: center; font-size: 18px; line-height: 1">+</span>
+</button>
+<p class="faq-a" hidden style="margin: 0; padding: 0 18px 18px; font-size: 15px; line-height: 1.6; color: #A3A39C">1. Tu paies sur la page sécurisée Chariow, par Mobile Money (Orange Money, MTN MoMo, Wave, Moov Money) ou par carte bancaire. 2. Tu reçois immédiatement ton accès à la formation, par e-mail et directement sur la page Chariow. 3. Tu commences la formation à ton rythme et tu rejoins le groupe privé avec le formateur.</p>
+</div>
+
+<div class="s-rv" style="border-radius: 16px; background: #0E0E13; border: 1px solid rgba(255,255,255,0.08)">
+<button type="button" class="faq-q" aria-expanded="false" style="width: 100%; min-height: 56px; padding: 16px 18px; background: transparent; border: 0; color: #F2F2EE; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 16px; font-weight: 700; text-align: left; display: flex; justify-content: space-between; align-items: center; gap: 14px; cursor: pointer">
+<span>Comment je reçois la formation ?</span>
+<span style="flex: none; width: 28px; height: 28px; border-radius: 50%; background: rgba(0,245,212,0.12); color: #00F5D4; display: inline-flex; align-items: center; justify-content: center; font-size: 18px; line-height: 1">+</span>
+</button>
+<p class="faq-a" hidden style="margin: 0; padding: 0 18px 18px; font-size: 15px; line-height: 1.6; color: #A3A39C">Immédiatement. Dès que ton paiement est validé, tu reçois ton accès par e-mail et directement sur la page Chariow.</p>
+</div>
+
+<div class="s-rv" style="border-radius: 16px; background: #0E0E13; border: 1px solid rgba(255,255,255,0.08)">
+<button type="button" class="faq-q" aria-expanded="false" style="width: 100%; min-height: 56px; padding: 16px 18px; background: transparent; border: 0; color: #F2F2EE; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 16px; font-weight: 700; text-align: left; display: flex; justify-content: space-between; align-items: center; gap: 14px; cursor: pointer">
+<span>Quels moyens de paiement sont acceptés ?</span>
+<span style="flex: none; width: 28px; height: 28px; border-radius: 50%; background: rgba(0,245,212,0.12); color: #00F5D4; display: inline-flex; align-items: center; justify-content: center; font-size: 18px; line-height: 1">+</span>
+</button>
+<p class="faq-a" hidden style="margin: 0; padding: 0 18px 18px; font-size: 15px; line-height: 1.6; color: #A3A39C">Mobile Money (Orange Money, MTN MoMo, Wave, Moov Money) ou carte bancaire.</p>
+</div>
+
+<div class="s-rv" style="border-radius: 16px; background: #0E0E13; border: 1px solid rgba(255,255,255,0.08)">
+<button type="button" class="faq-q" aria-expanded="false" style="width: 100%; min-height: 56px; padding: 16px 18px; background: transparent; border: 0; color: #F2F2EE; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 16px; font-weight: 700; text-align: left; display: flex; justify-content: space-between; align-items: center; gap: 14px; cursor: pointer">
+<span>Je n&#x27;ai jamais utilisé l&#x27;IA. C&#x27;est pour moi ?</span>
+<span style="flex: none; width: 28px; height: 28px; border-radius: 50%; background: rgba(0,245,212,0.12); color: #00F5D4; display: inline-flex; align-items: center; justify-content: center; font-size: 18px; line-height: 1">+</span>
+</button>
+<p class="faq-a" hidden style="margin: 0; padding: 0 18px 18px; font-size: 15px; line-height: 1.6; color: #A3A39C">Oui. La formation commence par la base, et le formateur te suit dans le groupe privé.</p>
+</div>
+
+<div class="s-rv" style="border-radius: 16px; background: #0E0E13; border: 1px solid rgba(255,255,255,0.08)">
+<button type="button" class="faq-q" aria-expanded="false" style="width: 100%; min-height: 56px; padding: 16px 18px; background: transparent; border: 0; color: #F2F2EE; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 16px; font-weight: 700; text-align: left; display: flex; justify-content: space-between; align-items: center; gap: 14px; cursor: pointer">
+<span>Est-ce que je suis sûr(e) de gagner de l&#x27;argent ?</span>
+<span style="flex: none; width: 28px; height: 28px; border-radius: 50%; background: rgba(0,245,212,0.12); color: #00F5D4; display: inline-flex; align-items: center; justify-content: center; font-size: 18px; line-height: 1">+</span>
+</button>
+<p class="faq-a" hidden style="margin: 0; padding: 0 18px 18px; font-size: 15px; line-height: 1.6; color: #A3A39C">Aucun revenu n&#x27;est garanti. La formation te donne la compétence et la méthode ; les résultats dépendent de ta pratique et de tes efforts.</p>
+</div>
+
+</div>
+</section>
+
+<!-- ================= 12. QUI SOMMES-NOUS ================= -->
+<section style="max-width: 1240px; margin: 0 auto; padding: 60px 20px 40px">
+<h2 class="s-rv" style="margin: 0; font-size: clamp(28px, 3.4vw, 40px); font-weight: 800">Qui sommes-nous ?</h2>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 16px; margin-top: 22px">
+<div class="s-rv" style="padding: 24px; border-radius: 20px; background: #0E0E13; border: 1px solid rgba(255,255,255,0.08)">
+<div style="display: flex; align-items: center; gap: 14px">
+<img src="assets/aristide.jpg" alt="Bouo Aristide" style="width: 64px; height: 64px; border-radius: 50%; object-fit: cover; border: 2px solid #00F5D4">
+<div><p style="margin: 0; font-weight: 800; font-size: 19px">Bouo Aristide</p><p style="margin: 3px 0 0; font-size: 14px; font-weight: 600; color: #00F5D4">Fondateur de l'Académie Digitale</p></div>
+</div>
+<p style="margin: 16px 0 0; font-size: 15px; line-height: 1.65; color: #A3A39C">Entrepreneur digital. Sur ma boutique Chariow, j'ai dépassé 2,3 millions de F de revenu total, avec plus de 2 900 clients. Mon objectif : aider à digitaliser l'Afrique, avec les meilleurs formateurs.</p>
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin-top: 16px">
+<img src="assets/chariow-revenu.jpg" alt="Tableau de bord Chariow : revenu total 2 379 000 F CFA" style="width: 100%; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1)">
+<img src="assets/chariow-analytique.jpg" alt="Analytiques Chariow du 5 octobre au 4 novembre 2026" style="width: 100%; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1)">
+</div>
+</div>
+<div class="s-rv" style="padding: 24px; border-radius: 20px; background: #0E0E13; border: 1px solid rgba(255,255,255,0.08)">
+<div style="display: flex; align-items: center; gap: 14px">
+<img src="assets/marc.jpg" alt="Le formateur Google Flow" style="width: 64px; height: 64px; border-radius: 50%; object-fit: cover; border: 2px solid #00F5D4">
+<div><p style="margin: 0; font-weight: 800; font-size: 19px">Marc</p><p style="margin: 3px 0 0; font-size: 14px; font-weight: 600; color: #00F5D4">Créateur de contenu sur TikTok</p></div>
+</div>
+<p style="margin: 16px 0 0; font-size: 15px; line-height: 1.65; color: #A3A39C">Il crée des vidéos IA depuis 5 ans. Il a monétisé son compte TikTok <strong style="color: #F2F2EE">Ivoire actu</strong> (46,5 K abonnés) et a généré <strong style="color: #F2F2EE">plus de 2 000 $</strong> grâce à la monétisation TikTok avec les vidéos IA, soit <strong style="color: #F2F2EE">plus de 1,1 million de F CFA</strong>. Dans la formation, il te montre sa méthode et te suit dans le groupe privé.</p>
+<a href="#" data-link="tiktokFormateur" target="_blank" rel="noopener" class="s-btn" style="margin-top: 16px; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; padding: 12px 18px; min-height: 44px; border-radius: 999px; border: 1px solid rgba(0,245,212,0.5); color: #00F5D4; font-weight: 700; font-size: 14px">Voir son TikTok @badybuisness2.0</a>
+</div>
+</div>
+</section>
+
+<!-- ================= 13. PASSE À L'ACTION + CONTACTS ================= -->
+<section style="max-width: 1240px; margin: 0 auto; padding: 60px 20px 30px">
+<div class="s-rv" style="text-align: center; padding: clamp(28px, 5vw, 52px); border-radius: 24px; background: #0E0E13; border: 1px solid rgba(0,245,212,0.35)">
+<h2 style="margin: 0; font-family: Anton, sans-serif; font-weight: 400; font-size: clamp(36px, 5vw, 60px); line-height: 1">PASSE À <span style="color: #00F5D4">L'ACTION</span></h2>
+<p style="margin: 12px 0 0; font-size: 16px; color: #A3A39C">Ta première vidéo IA, c'est cette semaine.</p>
+<a href="#offre" data-link="paiement" target="_blank" rel="noopener" class="s-btn" style="margin-top: 22px; display: inline-flex; align-items: center; min-height: 52px; padding: 14px 26px; border-radius: 999px; background: #00F5D4; color: #07070A; text-decoration: none; font-weight: 800">Rejoindre – <span data-cfg="prix">2 500 F</span></a>
+</div>
+<div class="s-rv" style="margin-top: 40px; display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 12px">
+<a href="#" data-link="whatsapp1" target="_blank" rel="noopener" style="text-decoration: none; display: flex; align-items: center; gap: 12px; padding: 14px 16px; border-radius: 16px; background: #0E0E13; border: 1px solid rgba(255,255,255,0.08)"><span style="width: 40px; height: 40px; border-radius: 50%; background: #25D366; display: flex; align-items: center; justify-content: center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21l1.6-4.7A8.5 8.5 0 1 1 8 19.6z"></path></svg></span><span><span style="display: block; font-weight: 700; color: #F2F2EE">WhatsApp 1</span><span style="display: block; font-size: 13px; color: #A3A39C"><span data-tel="whatsapp1">+225 05 01 43 64 08</span></span></span></a>
+<a href="#" data-link="whatsapp2" target="_blank" rel="noopener" style="text-decoration: none; display: flex; align-items: center; gap: 12px; padding: 14px 16px; border-radius: 16px; background: #0E0E13; border: 1px solid rgba(255,255,255,0.08)"><span style="width: 40px; height: 40px; border-radius: 50%; background: #25D366; display: flex; align-items: center; justify-content: center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21l1.6-4.7A8.5 8.5 0 1 1 8 19.6z"></path></svg></span><span><span style="display: block; font-weight: 700; color: #F2F2EE">WhatsApp 2</span><span style="display: block; font-size: 13px; color: #A3A39C"><span data-tel="whatsapp2">+225 07 09 74 39 73</span></span></span></a>
+<a href="#" data-link="telegram" target="_blank" rel="noopener" style="text-decoration: none; display: flex; align-items: center; gap: 12px; padding: 14px 16px; border-radius: 16px; background: #0E0E13; border: 1px solid rgba(255,255,255,0.08)"><span style="width: 40px; height: 40px; border-radius: 50%; background: #229ED9; display: flex; align-items: center; justify-content: center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 4 3 11l6 2 2 6 3-4 5 4z"></path></svg></span><span><span style="display: block; font-weight: 700; color: #F2F2EE">Telegram</span><span style="display: block; font-size: 13px; color: #A3A39C"><span data-text="telegram">@Bouodigital</span></span></span></a>
+</div>
+</section>
+
+<footer style="border-top: 1px solid rgba(255,255,255,0.07); margin-top: 30px">
+<div style="max-width: 1240px; margin: 0 auto; padding: 24px 20px 90px; font-size: 13px; color: #7A7A74; line-height: 1.6">
+<div style="display: flex; flex-wrap: wrap; gap: 18px; font-weight: 600; color: #D8D8D2"><a href="#offre" style="color: #D8D8D2; text-decoration: none">Tarif</a><a href="#faq" style="color: #D8D8D2; text-decoration: none">FAQ</a><a href="#" data-link="whatsapp1" target="_blank" rel="noopener" style="color: #D8D8D2; text-decoration: none">Contact</a><a href="politique.html#confidentialite" style="color: #D8D8D2; text-decoration: none">Politique de confidentialité</a><a href="politique.html#conditions" style="color: #D8D8D2; text-decoration: none">Conditions et remboursement</a></div>
+<p style="margin: 14px 0 0">© Académie Digitale · Formation indépendante, non affiliée à Google. Aucun revenu n'est garanti : les résultats varient selon les compétences, la stratégie et les efforts de chacun.</p>
+</div>
+</footer>
+
+<a href="#" data-link="whatsapp1" target="_blank" rel="noopener" aria-label="Nous écrire sur WhatsApp" class="s-wa" style="position: fixed; right: 18px; bottom: 18px; z-index: 60; width: 56px; height: 56px; border-radius: 50%; background: #25D366; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 30px rgba(0,0,0,0.45)"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21l1.6-4.7A8.5 8.5 0 1 1 8 19.6z"></path><path d="M9 9.5c.3 1.8 2.6 4.2 4.6 4.6l1.2-1.2 2 1-.4 1.6c-3.6.4-8-4-7.6-7.6l1.6-.4 1 2z"></path></svg></a>
+
+</div>
+<script src="assets/site.js"></script>
+</body>
+</html>
