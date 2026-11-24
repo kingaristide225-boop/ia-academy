@@ -120,6 +120,12 @@
   var intro = document.getElementById("intro");
   var site = document.getElementById("site");
   if (!intro || !site) return;
+  /* Visiteurs venus d'une pub Facebook : pas d'intro, la page s'affiche tout de suite */
+  if (/[?&](fbclid=|utm_source=facebook)/.test(location.search)) {
+    intro.parentNode && intro.parentNode.removeChild(intro);
+    site.classList.add("s-on");
+    return;
+  }
   var opened = false;
   function open() {
     if (opened) return;
